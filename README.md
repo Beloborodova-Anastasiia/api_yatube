@@ -28,12 +28,12 @@ cd api_final_yatube
 Cоздать и активировать виртуальное окружение:
 
 ```
-на Mac или Linux:
+для Mac или Linux:
 python3 -m venv env
 source venv/bin/activate
 ```
-
-на Windows:
+```
+для Windows:
 python -m venv venv
 source venv/Scripts/activate 
 ```
@@ -41,7 +41,12 @@ source venv/Scripts/activate
 Установить зависимости из файла requirements.txt:
 
 ```
+для Mac или Linux:
 python3 -m pip install --upgrade pip
+```
+```
+для Windows:
+python -m pip install --upgrade pip
 ```
 
 ```
@@ -51,13 +56,23 @@ pip install -r requirements.txt
 Выполнить миграции:
 
 ```
+для Mac или Linux:
 python3 manage.py migrate
+```
+```
+для Windows:
+python manage.py migrate
 ```
 
 Запустить проект:
 
 ```
+для Mac или Linux:
 python3 manage.py runserver
+```
+```
+для Windows:
+python manage.py runserver
 ```
 
 
@@ -108,3 +123,9 @@ POST: /api/v1/posts/{post_id}/comments/
   "post": 0
 }
 ```
+
+
+### Автор
+
+Белобородова Анастасия
+beloborodova.anastasiia@yandex.ru
