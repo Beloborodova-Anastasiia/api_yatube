@@ -96,6 +96,7 @@ POST: /api/v1/posts/{post_id}/comments/
 }
 ```
 ```
+Ответ:
 {
   "id": 0,
   "author": "string",
