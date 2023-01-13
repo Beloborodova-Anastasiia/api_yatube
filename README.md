@@ -1,12 +1,13 @@
-# Проект API для социальной сети "YATUBE"
+# API-servise for social network "YATUBE"
 
-### Описание
+### Description
 
-Проект "YATUBE" - это социальная сеть для ведения личного дневника.
-Проект "YATUBE" дает пользователям возможность создавать учетную запись, публиковать заметки в личный дневник, подписываться на других авторов, отмечать и комментировать понравившиеся записи, отправлять в сообщества, где можно прочитать заметки разных авторов.
-API для "YATUBE" дает возможность взаимодействоть с функциональной частью "YATUBE" через API-сервис.
+Social network Yatube is for keeping a diary. Users can create an account, publish notes, subscribe on another author, tag and comment on fovourite notes, add notice to the special groups.
 
-### Технологии
+Interraction with functional part of Yatube occurs through API-servise.
+
+
+### Technologies
 
 Python 3.7
 
@@ -15,39 +16,39 @@ Django 2.2.19
 Django REST framework 3.12.4
 
 
-### Как запустить проект:
+### Local project run:
 
-Клонировать репозиторий и перейти в него в командной строке:
+Clone a repository and navigate to it on the command line:
 
 ```
 git clone https://github.com/Beloborodova-Anastasiia/api_yatube.git
 ```
 
 ```
-cd api_yatube
+cd api_yatube/
 ```
 
-Cоздать и активировать виртуальное окружение:
+Create and activate virtual environment:
 
 ```
-для Mac или Linux:
-python3 -m venv env
+for Mac or Linux:
+python3 -m venv venv
 source venv/bin/activate
 ```
 ```
-для Windows:
+for Windows:
 python -m venv venv
 source venv/Scripts/activate 
 ```
 
-Установить зависимости из файла requirements.txt:
+Install dependencies from requirements.txt file:
 
 ```
-для Mac или Linux:
+for Mac or Linux:
 python3 -m pip install --upgrade pip
 ```
 ```
-для Windows:
+for Windows:
 python -m pip install --upgrade pip
 ```
 
@@ -55,38 +56,82 @@ python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-Выполнить миграции:
+Make migrations:
 
 ```
-для Mac или Linux:
+for Mac or Linux:
+cd yatube_api/
 python3 manage.py migrate
 ```
 ```
-для Windows:
+for Windows:
+cd yatube_api/
 python manage.py migrate
 ```
 
-Запустить проект:
+Create superuser if necessary:
 
 ```
-для Mac или Linux:
+for Mac or Linux:
+python3 manage.py createsuperuser
+```
+```
+for Windows:
+python manage.py createsuperuser
+```
+
+Run project:
+
+```
+for Mac or Linux:
 python3 manage.py runserver
 ```
 ```
-для Windows:
+for Windows:
 python manage.py runserver
 ```
 
+The project administrator's website is available at:
 
-### Примеры запросов к API
+```
+http://localhost/admin
+```
 
-Получить список всех публикаций:
+Project's documentation is available at:
+
+```
+http://localhost/redoc
+```
+
+
+### API request examples
+
+Get JWT-token:
+```
+POST: /api/v1/jwt/create/
+```
+```
+Request body:
+{
+  "username": "string",
+  "password": "string"
+}
+```
+```
+Response:
+{
+  "refresh": "string",
+  "access": "string"
+}
+```
+
+All publication recieving:
 
 ```
 GET: /api/v1/posts/
 ```
 ```
-Ответ:
+Response:
 {
   "count": 123,
   "next": "http://api.example.org/accounts/?offset=400&limit=100",
@@ -104,19 +149,19 @@ GET: /api/v1/posts/
 }
 ```
 
-Создать комментарий к посту:
+Create a commentary to the post:
 
 ```
 POST: /api/v1/posts/{post_id}/comments/
 ```
 ```
-Тело запроса:
+Request body:
 {
 "text": "string"
 }
 ```
 ```
-Ответ:
+Response:
 {
   "id": 0,
   "author": "string",
@@ -127,8 +172,8 @@ POST: /api/v1/posts/{post_id}/comments/
 ```
 
 
-### Автор
+### Author
 
-Белобородова Анастасия
+Anastasiia Beloborodova 
 
-beloborodova.anastasiia@yandex.ru
+anastasiia.beloborodova@gmail.com
