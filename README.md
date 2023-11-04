@@ -175,5 +175,3 @@ Response:
 ### Author
 
 Anastasiia Beloborodova 
-
-anastasiia.beloborodova@gmail.com
